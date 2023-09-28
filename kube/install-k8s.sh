@@ -62,7 +62,6 @@ sudo chown ubuntu:ubuntu /home/ubuntu/.kube/config
 kubectl get pod -A
 
 echo "6. Install adds"
-su ubuntu
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 cd ~/
 chmod 700 install-helm.sh
