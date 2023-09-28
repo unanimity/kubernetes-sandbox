@@ -63,8 +63,7 @@ kubectl get pod -A
 
 echo "6. Install adds"
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
-cd ~/
-chmod 700 install-helm.sh
+chmod 700 ~/kubernetes-sandbox/kube/install-helm.sh
 ~/kubernetes-sandbox/kube/install-helm.sh
 
 
@@ -85,6 +84,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 EOF
 kubectl apply -f terraform-rbac.yaml
+chmod 700 ~/kubernetes-sandbox/kube/create-auth.sh
 ~/kubernetes-sandbox/kube/create-auth.sh $1
 
 echo "7. Allow master node work"
